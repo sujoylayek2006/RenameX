@@ -48,7 +48,7 @@ RenameX is a lightweight, dependency-free Python utility designed for seamless b
 2. **Run the script** from your terminal:
 
    ```bash
-   python Changing_the_file_format.py
+   python src/main.py
    ```
 
 3. **The banner will appear, then follow the prompts:**
@@ -114,10 +114,13 @@ Done! 3 file(s) renamed.
 ```
 
 RenameX/
-   ├── .gitignore                    # Gitignore file
-   ├── Changing_the_file_format.py   # Main RenameX script
-   ├── LICENSE                       # License file
-   └── README.md                     # This file
+│── src/
+│   └── main.py                   # Main RenameX script
+│── examples/
+│   └── EXAMPLES.md               # Example usage walkthrough
+│── README.md                     # This file
+│── LICENSE                       # License file
+└── requirements.txt              # Dependency info (none required)
 ```
 
 ---

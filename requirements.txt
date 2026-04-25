@@ -1,0 +1,5 @@
+# RenameX — Requirements
+# No external dependencies required.
+# RenameX uses only Python's built-in 'os' module.
+
+# Python >= 3.6
