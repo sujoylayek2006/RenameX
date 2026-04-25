@@ -8,11 +8,16 @@ RenameX is a lightweight, dependency-free Python utility designed for seamless b
 - [About](#about)
 - [Features](#features)
 - [Requirements](#requirements)
+- [⚙️ Installation & Setup](#️-installation--setup)
 - [Usage](#usage)
 - [Example](#example)
-- [How It Works](#how-it-works)
-- [Project Structure](#project-structure)
-- [License](#license)
+- [Use Cases](#-use-cases)
+- [How It Works](#️-how-it-works)
+- [Project Structure](#-project-structure)
+- [⚠️ Important Notes](#️-important-notes)
+- [Contributing](#-contributing)
+- [Show Your Support](#-show-your-support)
+- [License](#-license)
 
 ---
 
@@ -38,6 +43,27 @@ RenameX is a lightweight, dependency-free Python utility designed for seamless b
 
 - Python **3.6+**
 - No external libraries required — uses only the built-in `os` module
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/sujoylayek2006/RenameX.git
+cd RenameX
+```
+
+### 2️⃣ Run the Script
+
+No installation or pip packages needed — just run it directly with Python:
+
+```bash
+python src/main.py
+```
+
+> **Requires:** Python 3.6 or higher. No third-party dependencies.
 
 ---
 
@@ -97,6 +123,21 @@ Done! 3 file(s) renamed.
 
 ---
 
+## 🗂️ Use Cases
+
+RenameX is perfect for a wide range of practical scenarios:
+
+| Scenario | Example |
+|---|---|
+| **Convert notes format** | Rename all `.txt` files to `.md` for Markdown editors |
+| **Batch photo renaming** | Change `.jpeg` files to `.jpg` for consistency |
+| **Web asset migration** | Rename `.html` files to `.htm` for legacy server support |
+| **Data file conversion** | Switch `.csv` files to `.tsv` after a format change |
+| **Script file prep** | Rename `.py` files to `.pyw` for Windows GUI scripts |
+| **Log file management** | Convert `.log` files to `.txt` for easier reading |
+
+---
+
 ## ⚙️ How It Works
 
 1. The script starts and **displays the RenameX ASCII banner** with tool metadata.
@@ -126,6 +167,54 @@ RenameX/
 │── LICENSE                       # License file
 └── requirements.txt              # Dependency info (none required)
 ```
+
+---
+
+## ⚠️ Important Notes
+
+> [!WARNING]
+> **Always backup important files before running RenameX.** Extension renaming modifies files in place and cannot be automatically undone.
+
+- 📁 **Ensure the correct folder path is provided** — an invalid path will halt the script before any changes are made.
+- 🧪 **Test on sample files first** — create a test folder with dummy files and do a dry run before applying to real data.
+- 🔡 Extensions are **case-sensitive** on some systems (e.g., `.TXT` ≠ `.txt` on Linux/macOS).
+- 🚫 The script only renames files in the **top-level folder** — it does not recurse into subfolders.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome and appreciated! Here's how you can help:
+
+1. **Fork** the repository
+2. **Create a new branch** for your feature or fix:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. **Make your changes** and commit them with a clear message:
+   ```bash
+   git commit -m "feat: add your feature description"
+   ```
+4. **Push** to your fork:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+5. **Open a Pull Request** — describe what you changed and why.
+
+Please make sure your code follows the existing style and is well-commented.
+
+---
+
+## ⭐ Show Your Support
+
+If **RenameX** saved you time or helped you learn something new, consider showing your support:
+
+- ⭐ **Star** this repository on GitHub
+- 🍴 **Fork** it and build something cool on top of it
+- 🐛 **Report bugs** or suggest features via [Issues](https://github.com/sujoylayek2006/RenameX/issues)
+- 📣 **Share** it with friends or classmates who might find it useful
+
+Every bit of support motivates further development — thank you! 🙏
 
 ---
 
