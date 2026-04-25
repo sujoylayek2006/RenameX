@@ -125,6 +125,7 @@ RenameX/
 ## 📄 License
 
 This project is open-source and free to use for personal or educational purposes.
+This project is licensed under the [MIT License](https://github.com/sujoylayek2006/RenameX?tab=MIT-1-ov-file#).
 
 ---
 
