@@ -1,6 +1,8 @@
 """
 Tool Name: RenameX
 Description: Renames files from one extension to another in a user-specified folder.
+Developed by: SUJOY LAYEK
+Date: 25-04-2026
 """
 
 import os
