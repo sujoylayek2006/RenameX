@@ -114,8 +114,10 @@ Done! 3 file(s) renamed.
 ```
 
 RenameX/
-    ├── Changing_the_file_format.py   # Main RenameX script
-    └── README.md                     # This file
+   ├── .gitignore                    # Gitignore file
+   ├── Changing_the_file_format.py   # Main RenameX script
+   ├── LICENSE                       # License file
+   └── README.md                     # This file
 ```
 
 ---
