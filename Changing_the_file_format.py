@@ -28,6 +28,9 @@ def print_banner():
     print(banner)
 
 
+# Function to rename files
+# Input: folder path
+# Output: renamed files
 def rename_files(folder_path, from_ext, to_ext):
     """Rename all files with from_ext to to_ext inside folder_path."""
 
