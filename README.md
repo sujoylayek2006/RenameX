@@ -116,12 +116,12 @@ Done! 3 file(s) renamed.
 RenameX/
 │── src/
 │   └── main.py                   # Main RenameX script
-│── examples/
+│── examples/                     # Example usage walkthrough
 │   │── 1.Before_the_using_RenameX.png
 │   │── 2.Terminal_view_before.png
 │   │── 3.Terminal_view_after.png
 │   │── 4.After_the_using_RenameX.png
-│   └── EXAMPLES.md               # Example usage walkthrough
+│   └── EXAMPLES.md               
 │── README.md                     # This file
 │── LICENSE                       # License file
 └── requirements.txt              # Dependency info (none required)
