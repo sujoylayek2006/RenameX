@@ -1,18 +1,18 @@
 # 🔄 RenameX — Bulk File Extension Renamer
 
-RenameX is a lightweight, dependency-free Python utility designed for seamless bulk extension swapping. Featuring built-in folder validation, automatic prefix handling, and detailed execution logs, it simplifies file management tasks for developers and students alike.
+RenameX is a lightweight, dependency-free Python CLI tool that lets you bulk-rename files in any folder by swapping their file extension — fast, simple, and safe.
+
 ---
 
 ## 📋 Table of Contents
 
-- [About](#about)
-- [Features](#features)
-- [Requirements](#requirements)
+- [About](#-about)
+- [Preview](#️-preview)
+- [Features](#✨-features)
 - [Installation & Setup](#️-installation--setup)
-- [Usage](#usage)
-- [Example](#example)
-- [Use Cases](#-use-cases)
+- [How To Use](#-how-to-use)
 - [How It Works](#️-how-it-works)
+- [Use Cases](#️-use-cases)
 - [Project Structure](#-project-structure)
 - [Important Notes](#️-important-notes)
 - [Contributing](#-contributing)
@@ -21,151 +21,199 @@ RenameX is a lightweight, dependency-free Python utility designed for seamless b
 
 ---
 
-## About
+## 📌 About
 
-**RenameX** is a simple but handy Python CLI tool that lets you bulk-rename files in any folder by swapping their file extension. Instead of manually renaming files one by one, just run the script, enter your folder path and the two extensions, and the tool handles the rest.
+**RenameX** is a simple but powerful Python CLI tool that lets you bulk-rename files in any folder by swapping their file extension. Instead of manually renaming files one by one, just run the script, enter your folder path and the two extensions — and the tool handles the rest instantly.
+
+---
+
+## 🖥️ Preview
+
+```
+================================================================
+    ____                                 _  __
+   / __ \___  ____  ____ _____ ___  ____| |/ /
+  / /_/ / _ \/ __ \/ __ `/ __ `__ \/ _ \   /
+ / _, _/  __/ / / / /_/ / / / / / /  __/   |
+/_/ |_|\___/_/ /_/\__,_/_/ /_/ /_/\___/_/|_|
+
+================================================================
+[*] Tool        : RenameX - File Extension Changer
+[*] Version     : 1.0
+[*] Developer   : SUJOY LAYEK
+[*] Description : Fast and secure bulk file extension modifier.
+================================================================
+```
 
 ---
 
 ## ✨ Features
 
-- 🎨 Displays a styled **ASCII banner** on startup with tool info
-- 📁 Supports any folder path (or defaults to the current directory)
-- 🔁 Renames all matching files in a single run
-- ✅ Auto-adds the `.` prefix to extensions if you forget it
-- 🛡️ Validates the folder path before doing anything
-- 📊 Shows a clear summary of renamed files and a final count
-- ⚠️ Gracefully reports any files that couldn't be renamed
-
----
-
-## Requirements
-
-- Python **3.6+**
-- No external libraries required — uses only the built-in `os` module
+| Feature | Details |
+|---|---|
+| 🎨 ASCII banner | Styled terminal banner displayed on startup |
+| 📁 Any folder supported | Use any path, or press Enter to use the current directory |
+| 🔍 Dry-run preview | Shows you exactly what will be renamed **before** touching any files |
+| ✅ Confirmation prompt | You must type `y` to confirm — nothing renames by accident |
+| 🔁 Bulk renaming | Renames all matching files in a single confirmed run |
+| ✅ Auto dot correction | Type `txt` — it auto-corrects to `.txt` and tells you |
+| 🛡️ Input validation | Re-asks for input if an extension is left blank |
+| 🛡️ Folder validation | Validates the path before scanning or changing anything |
+| 🚫 Duplicate guard | Skips files where the renamed target already exists |
+| 🔁 Same-extension guard | Detects if source and target are identical — exits early |
+| 📊 Rename summary | Shows `[OK]` / `[Skip]` / `[Error]` for each file + final count |
+| ⚠️ Safe error handling | Catches permission errors without stopping the rest of the process |
+| ⌨️ Ctrl+C support | Press Ctrl+C at any time to exit cleanly — no scary traceback |
+| ✅ No dependencies | Uses only Python's built-in `os` module |
 
 ---
 
 ## ⚙️ Installation & Setup
 
-### 1️⃣ Clone the Repository
+### Requirements
+
+- Python **3.6** or higher
+- No external libraries required — uses only the built-in `os` module
+
+### Steps
+
+**1. Clone the repository**
+```bash
+git clone https://github.com/sujoylayek2006/RenameX.git
+cd RenameX
+```
+
+**2. Run the script**
+```bash
+python src/main.py
+```
+
+> No `pip install` needed — this tool uses only Python's built-in libraries!
+
+---
+
+## 🧭 How To Use
+
+### Step 1 — Clone or download this repository
 
 ```bash
 git clone https://github.com/sujoylayek2006/RenameX.git
 cd RenameX
 ```
 
-### 2️⃣ Run the Script
-
-No installation or pip packages needed — just run it directly with Python:
+### Step 2 — Run the script
 
 ```bash
 python src/main.py
 ```
 
-> **Requires:** Python 3.6 or higher. No third-party dependencies.
-
----
-
-## 🚀 Usage
-
-1. **Clone or download** this repository.
-
-2. **Run the script** from your terminal:
-
-   ```bash
-   python src/main.py
-   ```
-
-3. **The banner will appear, then follow the prompts:**
-
-   ```
-   ================================================================
-       ____                                 _  __
-      / __ \___  ____  ____ _____ ___  ____| |/ /
-     / /_/ / _ \/ __ \/ __ `/ __ `__ \/ _ \   /
-    / _, _/  __/ / / / /_/ / / / / / /  __/   |
-   /_/ |_|\___/_/ /_/\__,_/_/ /_/ /_/\___/_/|_|
-
-   ================================================================
-   [*] Tool        : RenameX - File Extension Changer
-   [*] Version     : 1.0
-   [*] Developer   : SUJOY LAYEK
-   [*] Description : Fast and secure bulk file extension modifier.
-   ================================================================
-
-   Enter folder path (press Enter for current directory):
-   Enter source extension (e.g. .txt):
-   Enter target extension (e.g. .md):
-   ```
-
-> **Tip:** You can press **Enter** at the folder path prompt to use the directory where the script is located.
-
----
-
-## 💡 Example
-
-**Scenario:** You have a folder `C:\Users\John\Documents\notes` full of `.txt` files and want to convert them all to `.md`.
+### Step 3 — Enter the folder path
 
 ```
-Enter folder path (press Enter for current directory): C:\Users\John\Documents\notes
-Enter source extension (e.g. .txt): .txt
-Enter target extension (e.g. .md): .md
+Step 1 of 3 — Folder
+  Enter the full path to the folder you want to work in.
+  Press Enter to use the CURRENT directory.
 
-Renaming '.txt' -> '.md' in: C:\Users\John\Documents\notes
-
-  Renamed: todo.txt  ->  todo.md
-  Renamed: ideas.txt  ->  ideas.md
-  Renamed: summary.txt  ->  summary.md
-
-Done! 3 file(s) renamed.
+  Folder path: C:\Users\Sujoy\Documents\notes
 ```
 
----
+> Press **Enter** to use the current directory — the full resolved path is printed so you always know where you are.
 
-## 🗂️ Use Cases
+### Step 4 — Enter the source extension
 
-RenameX is perfect for a wide range of practical scenarios:
+```
+Step 2 of 3 — Source Extension
+  This is the extension your files currently have.
 
-| Scenario | Example |
-|---|---|
-| **Convert notes format** | Rename all `.txt` files to `.md` for Markdown editors |
-| **Batch photo renaming** | Change `.jpeg` files to `.jpg` for consistency |
-| **Web asset migration** | Rename `.html` files to `.htm` for legacy server support |
-| **Data file conversion** | Switch `.csv` files to `.tsv` after a format change |
-| **Script file prep** | Rename `.py` files to `.pyw` for Windows GUI scripts |
-| **Log file management** | Convert `.log` files to `.txt` for easier reading |
+Enter source extension (e.g. .txt): txt
+  [+] Auto-corrected to: '.txt'
+```
+
+> If you forget the dot, it is auto-added and shown to you — `txt` becomes `.txt`.
+
+### Step 5 — Enter the target extension
+
+```
+Step 3 of 3 — Target Extension
+  This is the extension you want to rename your files TO.
+
+Enter target extension (e.g. .txt): md
+  [+] Auto-corrected to: '.md'
+```
+
+### Step 6 — Review the preview and confirm
+
+```
+  Scanning 'C:\Users\Sujoy\Documents\notes' for '.txt' files...
+
+  Preview — 3 file(s) will be renamed:
+
+    todo.txt    ->  todo.md
+    ideas.txt   ->  ideas.md
+    summary.txt ->  summary.md
+
+  Proceed with renaming? (y/n): y
+```
+
+> You see every rename **before** it happens. Type `y` to proceed or `n` to cancel safely.
+
+### Step 7 — Watch the results!
+
+```
+  [OK]    todo.txt    ->  todo.md
+  [OK]    ideas.txt   ->  ideas.md
+  [OK]    summary.txt ->  summary.md
+
+  Done!  3 renamed
+```
 
 ---
 
 ## ⚙️ How It Works
 
 1. The script starts and **displays the RenameX ASCII banner** with tool metadata.
-2. The user enters a **folder path**, a **source extension**, and a **target extension**.
-3. The script validates that the folder exists.
-4. It iterates through all files in the folder and finds every file whose name ends with the source extension.
-5. Each matching file is renamed by replacing the old extension with the new one using `os.rename()`.
-6. Errors (e.g., permission issues) are caught and reported without stopping the rest of the process.
-7. A final count of successfully renamed files is displayed.
+2. The user is guided through **3 numbered steps**: folder path → source extension → target extension.
+3. At each step, **input is validated** — empty extensions are rejected, missing dots are auto-added.
+4. If source and target extensions are the same, the script **exits early** with a clear message.
+5. The script **validates that the folder exists** — if not, it stops safely with a helpful hint.
+6. It **scans the folder** and builds a list of all files matching the source extension.
+7. A **dry-run preview** shows every planned rename before any file is touched.
+8. The user **confirms with `y`** — typing anything else cancels cleanly with no changes made.
+9. Each file is renamed using `os.rename()`. If a target filename already exists, that file is **skipped**.
+10. Errors (e.g. permission issues) are **caught and reported** per-file without stopping the rest.
+11. A **final summary** shows counts of renamed, skipped, and failed files.
+
+---
+
+## 🗂️ Use Cases
+
+| Scenario | Example |
+|---|---|
+| 📝 **Convert notes format** | Rename all `.txt` files to `.md` for Markdown editors |
+| 🖼️ **Batch photo renaming** | Change `.jpeg` files to `.jpg` for consistency |
+| 🌐 **Web asset migration** | Rename `.html` files to `.htm` for legacy server support |
+| 📊 **Data file conversion** | Switch `.csv` files to `.tsv` after a format change |
+| 🐍 **Script file prep** | Rename `.py` files to `.pyw` for Windows GUI scripts |
+| 🗂️ **Log file management** | Convert `.log` files to `.txt` for easier reading |
 
 ---
 
 ## 📂 Project Structure
 
 ```
-
 RenameX/
-│── src/
-│   └── main.py                   # Main RenameX script
-│── examples/                     # Example usage walkthrough
-│   │── 1.Before_the_using_RenameX.png
-│   │── 2.Terminal_view_before.png
-│   │── 3.Terminal_view_after.png
-│   │── 4.After_the_using_RenameX.png
-│   └── EXAMPLES.md               
-│── README.md                     # This file
-│── LICENSE                       # License file
-└── requirements.txt              # Dependency info (none required)
+├── src/
+│   └── main.py               # Main RenameX script
+├── examples/                 # Example usage walkthrough
+│   ├── 1.Before_RenameX.png
+│   ├── 2.Terminal_before.png
+│   ├── 3.Terminal_after.png
+│   ├── 4.After_RenameX.png
+│   └── EXAMPLES.md
+├── .gitignore                # Git repository settings
+├── README.md                 # This file
+├── LICENSE                   # License file
+└── requirements.txt          # Dependency info (none required)
 ```
 
 ---
@@ -175,10 +223,12 @@ RenameX/
 > [!WARNING]
 > **Always backup important files before running RenameX.** Extension renaming modifies files in place and cannot be automatically undone.
 
-- 📁 **Ensure the correct folder path is provided** — an invalid path will halt the script before any changes are made.
-- 🧪 **Test on sample files first** — create a test folder with dummy files and do a dry run before applying to real data.
+- 🔍 **Preview before you commit** — RenameX always shows a dry-run preview and asks for confirmation before touching any files.
+- 📁 **Ensure the correct folder path is provided** — an invalid path halts the script before any changes are made.
+- 🧪 **Test on sample files first** — create a test folder with dummy files and verify the preview looks right before applying to real data.
 - 🔡 Extensions are **case-sensitive** on some systems (e.g., `.TXT` ≠ `.txt` on Linux/macOS).
 - 🚫 The script only renames files in the **top-level folder** — it does not recurse into subfolders.
+- ⌨️ **Press Ctrl+C at any time** to exit safely — no files will be changed.
 
 ---
 
@@ -226,4 +276,3 @@ This project is licensed under the [MIT License](https://github.com/sujoylayek20
 ---
 
 > Made with ❤️ by **SUJOY LAYEK** using Python
-
